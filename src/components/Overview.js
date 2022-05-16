@@ -10,7 +10,7 @@ const Overview = ({tasks, deleteTask}) => {
         <ul>
             {tasks.map((task) => {
                 return (
-                    <li className="text" key={task.id}>
+                    <li className="text-white" key={task.id}>
                         {task.task}
                         {' '}
                         <button onClick={deleteTask}>

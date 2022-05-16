@@ -30,7 +30,7 @@ export default function List () {
     return (
     <>
         <form>
-            <label className='text' htmlFor='taskInput'>Enter Task: </label>
+            <label className='text-white' htmlFor='taskInput'>Enter Task: </label>
             <input 
                 onChange={taskInput}   
                 value={task} 
