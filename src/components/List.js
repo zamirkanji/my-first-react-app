@@ -1,5 +1,6 @@
 import uniqid from 'uniqid';
 import Overview from './Overview';
+import ClearAllButton from './ClearAllButton';
 import React from 'react';
 import { useState } from 'react';
 
@@ -27,6 +28,11 @@ export default function List () {
         }
     }
 
+    const trimString = (str) => {
+        let trimmedStr = str.trim();
+        return trimmedStr
+    }
+
     return (
     <>
         <form>
@@ -45,7 +51,7 @@ export default function List () {
                     setTask('');
                     setTasks([
                         ...tasks,
-                    {id: uniqid(), task: task}
+                    {id: uniqid(), task: trimString(task)}
                     ])
                     console.log(task, tasks, buttonState);
                 } else {
@@ -56,15 +62,8 @@ export default function List () {
                 <span className='text' >Add Task</span>
             </button>
         </form>
-        {buttonState ? <Overview tasks={tasks} deleteTask={deleteTask}/> : null}
-        <div id='clear-all-container'>    
-            {tasks.length > 0 ? 
-                <button id='clear-all' onClick={clearTasks}>
-                    Clear All Items
-                </button> : null
-            }
-        </div>
-        
+        {buttonState ? <Overview tasks={tasks} deleteTask={deleteTask} setTasks={setTasks}/> : null}
+        <ClearAllButton tasks={tasks} clearTasks={clearTasks}/>
     </>
     )
 }

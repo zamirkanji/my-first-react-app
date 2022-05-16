@@ -153,8 +153,11 @@ h1 {
 
 #clear-all-container {
   height: 10%;
+  align-self: center;
 }
 
 #clear-all {
-  width: 100px;
+  /* width: 100px; */
+  width: auto;
+  height: 50px;
 }

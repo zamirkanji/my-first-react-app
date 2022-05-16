@@ -1,10 +1,9 @@
 import React from "react";
 import { useState } from "react";
 
-const Overview = ({tasks, deleteTask}) => {
+const Overview = ({tasks, deleteTask, setTasks}) => {
     // tasks.map(t => console.log(t.id));
     const [index, setIndex] = useState(0); 
-    // console.log(index);
     /*destructuring assignment - taking tasks array out of passed props*/
     return (
         <ul>
@@ -14,7 +13,7 @@ const Overview = ({tasks, deleteTask}) => {
                         {task.task}
                         {' '}
                         <button onClick={deleteTask}>
-                            Delete Task
+                            <span className="text-black">Delete Task</span>
                         </button>
                     </li>
                 )
