@@ -25,7 +25,7 @@ export default function List () {
         console.log(tasks, task);
         console.log(e);
         console.log('test delete task button');
-        return setTasks(tasks.filter(t => t.id !== task.id))
+        setTasks(tasks.filter(t => t.id !== task.id))
     }
 
     const taskInput = e => {
@@ -55,13 +55,13 @@ export default function List () {
             <button onClick={e => {
                 e.preventDefault();
                 if (task.length > 0) {
+                    console.log(task, tasks, buttonState);
                     setButtonState(true);
                     setTask('');
                     setTasks([
                         ...tasks,
                     {id: uniqid(), task: trimString(task)}
                     ])
-                    console.log(task, tasks, buttonState);
                 } else {
                     return null
                 }  
