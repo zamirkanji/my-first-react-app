@@ -9,22 +9,17 @@ export default function List () {
     const [tasks, setTasks] = useState([]);
     const [buttonState, setButtonState] = useState(false);
 
-    const storeTasksLocaleStorage = ({tasks}) => {
-        let LOCAL = window.localStorage;
-        LOCAL.setItem(tasks);
-        console.log(LOCAL);
-    }
-
-    // storeTasksLocaleStorage();
+    // const storeTasksLocaleStorage = ({tasks}) => {
+    //     let LOCAL = window.localStorage;
+    //     LOCAL.setItem(tasks);
+    //     console.log(LOCAL);
+    // }
 
     const clearTasks = () => {
         return setTasks([])
     }
 
-    const deleteTask = (e) => {
-        console.log(tasks, task);
-        console.log(e);
-        console.log('test delete task button');
+    const deleteTask = () => {
         setTasks(tasks.filter(t => t.id !== task.id))
     }
 
@@ -70,7 +65,11 @@ export default function List () {
                 <span className='text' >Add Task</span>
             </button>
         </form>
-        {buttonState ? <Overview tasks={tasks} deleteTask={deleteTask} setTasks={setTasks}/> : null}
+
+        {/* set tasks is being called here to update state when list is created, 
+        needs to only be called when there are enough items in list and only on click of delete task button */}
+        {buttonState ? <Overview tasks={tasks} setTasks={setTasks}/> : null}
+
         <ClearAllButton tasks={tasks} clearTasks={clearTasks}/>
     </>
     )
