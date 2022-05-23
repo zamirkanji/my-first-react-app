@@ -8,19 +8,10 @@ export default function List () {
     const [task, setTask] = useState('');
     const [tasks, setTasks] = useState([]);
     const [buttonState, setButtonState] = useState(false);
-
-    // const storeTasksLocaleStorage = ({tasks}) => {
-    //     let LOCAL = window.localStorage;
-    //     LOCAL.setItem(tasks);
-    //     console.log(LOCAL);
-    // }
+    // const [editTask, setEditTask] = useState(true);
 
     const clearTasks = () => {
         return setTasks([])
-    }
-
-    const deleteTask = () => {
-        setTasks(tasks.filter(t => t.id !== task.id))
     }
 
     const taskInput = e => {
