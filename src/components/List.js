@@ -56,11 +56,7 @@ export default function List () {
                 <span className='text' >Add Task</span>
             </button>
         </form>
-
-        {/* set tasks is being called here to update state when list is created, 
-        needs to only be called when there are enough items in list and only on click of delete task button */}
         {buttonState ? <Overview tasks={tasks} setTasks={setTasks}/> : null}
-
         <ClearAllButton tasks={tasks} clearTasks={clearTasks}/>
     </>
     )

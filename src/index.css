@@ -18,7 +18,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
-  overflow: auto;
+  /* overflow: auto; */
 }
 
 code {
@@ -52,7 +52,7 @@ code {
 }
 
 #title {
-  padding: 25px;
+  padding: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,7 +60,7 @@ code {
   background-color: black;
   border-radius: 0px 5px;
   margin: 0px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .main-container {
@@ -68,7 +68,8 @@ code {
   display: flex;
   flex-direction: column;
   margin: 10px;
-  gap: 50px;
+  gap: 25px;
+  border: 1px solid blue;
 }
 
 form {
@@ -77,7 +78,7 @@ form {
   display: flex;
   gap: 10px;
   justify-content: center;
-  
+  border: 1px solid red;
 }
 
 label {
@@ -97,7 +98,6 @@ button {
   padding: 5px;
   text-align: center;
   color: black;
-
 }
 
 ul {
@@ -107,30 +107,49 @@ ul {
   height: 75%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   overflow: auto;
+  border: 1px solid yellow;
 }
 
 li {
   background-color: rgb(45, 45, 45);
-  padding-left: 10px;
+  /* padding-left: 10px; */
   width: 100%;
   height: 50px;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: flex-start;
+  /* list-style-type: circle; */
+  /* border-radius: 5px; */
+}
+
+li > span {
+  flex: 1.5;
+  display: flex;
   align-items: center;
-  list-style-type: circle;
-  text-align: center;
-  border-radius: 5px;
+  padding-left: 10px;
 }
 
 li::before {
   list-style-type: circle;
 }
 
-li > button {
-  height: 50px;
-  padding: 10px;
+.list-buttons {
+  height: 100%;
+  width: 50%;
+  border-radius: 0px;
+  border: 1px solid black;
+}
+
+#task-text {
+  justify-self: flex-start;
+}
+
+#edit-delete-btn-container {
+  flex: .5;
+  display: flex;
+  /* gap: 10px; */
 }
 
 h1 {
@@ -139,11 +158,12 @@ h1 {
 }
 
 #clear-all-container {
-  height: 10%;
-  align-self: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border: 1px solid green;
 }
 
 #clear-all {
-  width: auto;
   height: 50px;
 }
